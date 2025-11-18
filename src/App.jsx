@@ -1,27 +1,26 @@
-import { Routes, Route } from "react-router-dom";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { Routes, Route, Link } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar";
 import ProductDetail from "./pages/Product/ProductDetail";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+
 import "./App.scss";
 
 function App() {
   return (
     <div className="app">
-      {/* Header */}
-      <AppBar position="fixed" className="app-header">
-        <Toolbar>
-          <Typography variant="h6" className="logo">
-            IMAJIN APP
-          </Typography>
-        </Toolbar>
-      </AppBar>
+
+      <Navbar />
 
       {/* Page Content */}
       <div className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
